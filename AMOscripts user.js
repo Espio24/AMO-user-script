@@ -7,6 +7,8 @@
 // @match https://sshagin.amocrm.ru/leads/detail*
 // @icon https://www.google.com/s2/favicons?sz=64&domain=amocrm.ru
 // @grant none
+// @downloadURL  https://github.com/Espio24/AMO-user-script/blob/e9984289634744d089c746ea7a7061661a5f0148/AMOscripts%20user.js
+// @updateURL    https://github.com/Espio24/AMO-user-script/blob/e9984289634744d089c746ea7a7061661a5f0148/AMOscripts%20user.js
 // ==/UserScript==
 
 (function() {
@@ -20,6 +22,8 @@
         }
         return obj
     }
+	
+	console.log('kek');
 
     function getToken(login, password){
         var url = new URL('https://api.pyrus.com/v4/auth');
