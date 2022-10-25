@@ -6,7 +6,14 @@
 // @author You
 // @match https://sshagin.amocrm.ru/leads/detail*
 // @icon https://www.google.com/s2/favicons?sz=64&domain=amocrm.ru
-// @grant none
+// @updateURL    https://github.com/Espio24/AMO-user-script/blob/Base/AMOscripts%20user.js
+// @downloadURL  https://github.com/Espio24/AMO-user-script/blob/Base/AMOscripts%20user.js
+// @run-at       document-end
+// @grant        GM_getResourceText
+// @grant        GM_addStyle
+// @grant        GM_xmlhttpRequest
+// @grant        GM_getResourceURL
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 (function() {
