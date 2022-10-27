@@ -1,16 +1,15 @@
 // ==UserScript==
 // @name AMOscripts
 // @namespace http://tampermonkey.net/
-// @version 1.2
+// @version 1.0
 // @description try to take over the world!
 // @author You
 // @match https://sshagin.amocrm.ru/leads/detail*
 // @icon https://www.google.com/s2/favicons?sz=64&domain=amocrm.ru
+// @updateURL https://raw.githubusercontent.com/Espio24/AMO-user-script/База/AMOscripts_user.js
+// @downloadURL https://raw.githubusercontent.com/Espio24/AMO-user-script/База/AMOscripts_user.js
 // @grant none
-// @updateURL    https://github.com/Espio24/AMO-user-script/blob/Base/AMOscripts%20user.js
-// @downloadURL  https://github.com/Espio24/AMO-user-script/blob/Base/AMOscripts%20user.js
 // ==/UserScript==
-
 
 (function() {
     'use strict';
@@ -23,8 +22,6 @@
         }
         return obj
     }
-	
-	console.log('kek');
 
     function getToken(login, password){
         var url = new URL('https://api.pyrus.com/v4/auth');
@@ -128,7 +125,7 @@
         {return 3}
         else if (Kakaja1C == 'ERP')
         {return 5}
-        else {return null}
+        else {return 9}
     }
 
     function checkClose(taskid){
@@ -388,6 +385,12 @@
     tonewButton.onclick = async function(){
          var date = document.getElementsByName('CFV[1093939]')[0].value;
         //"2017-03-16T14:53:23Z" 31.05.2022 15:15
+
+        if (date == '' || date == null){
+            alert ('Не проставлена дата следующего шага');
+            return
+        }
+
         var arr = date.split(' ');
         var datearr = arr[0].split('.');
         var arrtime = arr[1].split(':');
@@ -397,11 +400,6 @@
         }else { hour = (arrtime[0]-3);
         }
         var needDate = datearr[2] + '-' + datearr[1]+ '-' + datearr[0] + 'T' + hour + ':' + arrtime[1] + ':00Z';
-
-        if (date == ' ' || date == null){
-            alert ('Не проставлена дата следующего шага');
-            return
-        }
 
         var taskid;
         token = getToken(login, password);
@@ -418,6 +416,8 @@
         var pyrusidtippodkluchenia = 85;
         var pyrusidtipobraba = 205;
         var pyrusidAMOlink = 282;
+        var pyrushunt = 123;
+        var pyrusdate = 184;
 
 
         findohotnik();
