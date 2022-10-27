@@ -11,6 +11,7 @@
 
 (function() {
     'use strict';
+    console.log('kek');
     //Функции
     function strToObj(str){
         var obj = {};
