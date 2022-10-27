@@ -1,13 +1,11 @@
 // ==UserScript==
 // @name AMOscripts
 // @namespace http://tampermonkey.net/
-// @version 1.1
+// @version 1.2
 // @description try to take over the world!
 // @author You
 // @match https://sshagin.amocrm.ru/leads/detail*
 // @icon https://www.google.com/s2/favicons?sz=64&domain=amocrm.ru
-// @updateURL https://raw.githubusercontent.com/Espio24/AMO-user-script/База/AMOscripts_user.js
-// @downloadURL https://raw.githubusercontent.com/Espio24/AMO-user-script/База/AMOscripts_user.js
 // @grant none
 // ==/UserScript==
 
