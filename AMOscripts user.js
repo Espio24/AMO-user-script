@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name AMOscripts
 // @namespace http://tampermonkey.net/
-// @version 1.2
+// @version 1.1
 // @description try to take over the world!
 // @author You
 // @match https://sshagin.amocrm.ru/leads/detail*
@@ -11,7 +11,6 @@
 
 (function() {
     'use strict';
-    console.log('kek');
     //Функции
     function strToObj(str){
         var obj = {};
