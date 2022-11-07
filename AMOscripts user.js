@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name AMOscripts
 // @namespace http://tampermonkey.net/
-// @version 1.0.1
+// @version 1.1
 // @description try to take over the world!
 // @author You
 // @match https://sshagin.amocrm.ru/leads/detail*
@@ -80,11 +80,13 @@
     }
 
 
- function getGdeNakli(GdeNakli){
+    function getGdeNakli(GdeNakli){
         if (GdeNakli.includes('8') || GdeNakli.includes('Fresh')){
             return 1}
         else if (GdeNakli.includes('7'))
         {return 2}
+        else if (GdeNakli.includes('Склад'))
+        {return 3}
         else {return null}
     }
 
@@ -416,6 +418,7 @@
         var pyrusidAMOlink = 282;
         var pyrushunt = 123;
         var pyrusdate = 184;
+        var itsMS = 305;
 
 
         findohotnik();
@@ -463,14 +466,21 @@
                 //Где накладные?
                 {id: pyrusidGdeNakli,
                  value: {
-                     choice_id: getGdeNakli(GdeNakli)}},
+                     choice_id: (getGdeNakli(GdeNakli) == 3) ? null : getGdeNakli(GdeNakli) }
+                },
                 //Какая 1С?
                 {id: pyrusidKakaja1C,
                  value: {
-                     choice_id: getKakaja1C(Kakaja1C)}},
+                     choice_id: getKakaja1C(Kakaja1C)}
+                },
                 //Ссылка на АМО
                 {id: pyrusidAMOlink,
-                 value: window.location.href}
+                 value: window.location.href},
+                //Мой склад ли это
+                {id: itsMS,
+                 value: {
+                 choise_id: (getGdeNakli(GdeNakli) == 3) ? 1 : null }
+                }
             ]
         });
 
