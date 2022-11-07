@@ -479,7 +479,7 @@
                 //Мой склад ли это
                 {id: itsMS,
                  value: {
-                 choise_id: (getGdeNakli(GdeNakli) == 3) ? 1 : null }
+                 choise_id: (getGdeNakli(GdeNakli) == 3) ? 1 : 2 }
                 }
             ]
         });
