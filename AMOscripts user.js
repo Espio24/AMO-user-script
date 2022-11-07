@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name AMOscripts
 // @namespace http://tampermonkey.net/
-// @version 1.1
+// @version 1.0.1
 // @description try to take over the world!
 // @author You
 // @match https://sshagin.amocrm.ru/leads/detail*
@@ -80,8 +80,8 @@
     }
 
 
-    function getGdeNakli(GdeNakli){
-        if (GdeNakli.includes('8')){
+ function getGdeNakli(GdeNakli){
+        if (GdeNakli.includes('8') || GdeNakli.includes('Fresh')){
             return 1}
         else if (GdeNakli.includes('7'))
         {return 2}
